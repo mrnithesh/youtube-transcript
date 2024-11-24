@@ -52,7 +52,7 @@ def main():
         submit_button = st.form_submit_button("Analyze Video")
 
     # Fetch API key
-    api_key = st.text_input("Enter your Google API key:")
+    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         st.error("Google API key is required to use the AI model.")
         return
